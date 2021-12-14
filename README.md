@@ -1,6 +1,6 @@
-# Scrimba Frontend Career Path - (Momentum Chrome Extension - Module 07)
+# Scrimba Frontend Career Path - (Airb&B Clone - Module 11)
 
-This is a solution to the [Scrimba Frontend Career Path - (Module07-APIs/Game of War)](https://scrimba.com/learn/frontend).
+This is a solution to the [Scrimba Frontend Career Path - (Module11-React Basics/AirB&B Clone)](https://scrimba.com/learn/frontend).
 
 ## Table of contents
 
@@ -21,21 +21,18 @@ This is a solution to the [Scrimba Frontend Career Path - (Module07-APIs/Game of
 
 ### The challenge
 
-Clone of the famous chrome extension "momentum"
+Clone part of the AirBnB experience website using React
 
 After this Challenge I should be able to Code/Understand:
 
-- Clients/Servers
-- Requests/Response
-- JSON
-- fetch/.then()
-- Requests(methods, headers, body, URL)
-- REST API Design (params, query)
-- Async Javascript (callbacks, promises, async/await)
+- React Baisc file structure
+- Consuming JSON data
+- Passing props
+- Conditional Rendering in React
 
 ### Screenshot
 
-![](./imagem.png)
+![](./solution.png)
 
 ### Links
 
