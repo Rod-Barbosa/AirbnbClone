@@ -36,56 +36,84 @@ After this Challenge I should be able to Code/Understand:
 
 ### Links
 
-- Solution Github URL: [https://github.com/Rod-Barbosa/momentumClone](https://github.com/Rod-Barbosa/momentumClone)
-- Live Site URL: no live site for chrome extension, jsut download the repo and install on your browser
+- Solution Github URL: [github.com/Rod-Barbosa/AirbnbClone](https://github.com/Rod-Barbosa/AirbnbClone)
+- Live Site URL: [rodrigo-airbnbclone.netlify.app/](https://rodrigo-airbnbclone.netlify.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- React
 - JavaScript
-- Chrome Dev Tools
+- JSON
+- CSS custom properties
 
 ### What I learned
 
-This makes the background walways pretty
-```css
-body {
-    background: no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+Google fonts go on the index.html that sits on the public folder:
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 ```
 
-Making letters easier to read on a picture background
-```css
-{
-    text-shadow: 0px 0px 20px #aaaaaa;
-    text-shadow: 1px 1px 2px #474747;
-}
+For passing images as props:
+
+```React
+import dataSet from "../data.json"
+
+function App (){
+const eventsArray = dataSet.map(activity=>
+    <Card 
+        img={activity.coverImg}
+        rating={activity.stats.rating}
+        reviewCount={activity.stats.reviewCount}
+        country={activity.location}
+        title={activity.title}
+        price={activity.price}
+    />
+)
+    return (
+        <div className="container">
+            <Navbar />
+            <Hero />
+            {eventsArray}
+        </div>
+```
+Plus this line in the Card component:
+
+```React
+<img src={`../images/${props.img}`}
 ```
 
-To work with view hight without running into margins forcing scrolling
-```css
-* {
-    box-sizing: border-box;
-}  
+This is a neat little trick for conditional rendering. Instead of putting the full if statement, I can use && and it works just fine
+```React
+{props.openSpots === 0 && <div className="card--badge">SOLD OUT</div>}
+```
+
+For passing props one can just simply use the spread operator, but must always explicitly declare the key value (in case you are using map function)
+
+```React
+export default function App() {
+    const cards = data.map(item => {
+        return (
+            <Card
+                key={item.id}
+                {...item}
 ```
 
 ### Continued development
 
-This could go 1000 different directions, but just adding stuff to the screen seems counter productive to a tab extension that is supposed to free your mind from being bombarded by too much information
+This project is one and done. A lot mor eunderstanding about file structure is needed befor eI can comprehend why changing the images folder around has such a breaking/fixing effect. But that will come with more projects
 
 ### Useful resources
 
-- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#getting_the_current_position) - Specially cool to use the lon and lat params
-- [Javascript Clock Updated every second](https://stackoverflow.com/questions/39418405/making-a-live-clock-in-javascript) - setInterval(function, 1000) saves the day once again
-- [Crypto API](https://www.coingecko.com/en/api/documentation) - Coingecko seems overloaded and slow, but it gets the job done
-
+- [passing props by spreading the object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_object_literals) - It makes Card Componentit prettier, but makes it harder for human to read
+                  
 ## Author
 
 - Website - [Rodrigo Portfolio](https://www.gelatodigital.com)
