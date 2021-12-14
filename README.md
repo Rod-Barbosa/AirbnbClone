@@ -1,4 +1,4 @@
-# Scrimba Frontend Career Path - (Airb&B Clone - Module 11)
+# Scrimba Frontend Career Path - (AirB&B Clone - Module 11)
 
 This is a solution to the [Scrimba Frontend Career Path - (Module11-React Basics/AirB&B Clone)](https://scrimba.com/learn/frontend).
 
